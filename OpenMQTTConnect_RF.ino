@@ -287,8 +287,31 @@ void enableRFReceive() {
 }
 #endif
 
+/*FUNÇÃO DE DEPURAÇÃO
+Essa função está rodando dentro do void loop()
+**********************************************
+void Hello(){
+  Serial.println("Hello World!!!");
+}
+**********************************************
+*/
+
+/* ESSE CODIGO NÃO FUNCIONOU NA FUNÇÃO void loop()
+**********************************************
+void testRFReceive() {
+  if (mySwitch.available()) {
+    Serial.println("RF Signal Received");
+    uint64_t value = mySwitch.getReceivedValue();
+    Serial.printf("Received Value: %llu\n", value);
+    mySwitch.resetAvailable();
+  }
+}
+**********************************************
+*/
+
 void setup(){
   Serial.begin(9600);
+  Serial.println("Setup Concluido");
 }
 
 void loop(){
